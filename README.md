@@ -1,4 +1,8 @@
 # nginx-libressl
+|    OS    | Build Status |
+|:--------:|:------------:|
+| CentOS 7 X86_64 | [![Build Status](https://drone.io/github.com/DRN88/nginx-libressl/status.png)](https://drone.io/github.com/DRN88/nginx-libressl/latest) |
+
 * Minimal change to nginx.spec file
 * Edit patch/spec file to change LibreSSL version, etc
 
