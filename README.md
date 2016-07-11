@@ -4,7 +4,7 @@
 
 ## Install dependencies
 ```bash
-yum -y install openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-devel pcre-devel libxslt-devel gd-devel gcc-c++ make which wget autoconf libtool
+yum -y install openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-devel pcre-devel libxslt-devel gd-devel gcc-c++ make which wget autoconf libtool rpmdevtools git patch
 ```
 
 ## Quick build on CentOS 7
