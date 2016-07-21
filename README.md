@@ -1,6 +1,7 @@
 # nginx-libressl
 * Minimal change to nginx.spec file
 * Edit patch/spec file to change LibreSSL version, etc
+* Added -DTCP_FASTOPEN=23 CC option with spec and patch
 
 ## Install dependencies
 ```bash
