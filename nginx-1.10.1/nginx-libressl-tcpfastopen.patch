@@ -1,7 +1,7 @@
 --- nginx.spec	2016-07-21 10:06:41.313305529 +0100
 +++ nginx-libressl-tcpfastopen.spec	2016-07-21 10:08:22.754298477 +0100
 @@ -1,3 +1,4 @@
-+%define libressl_version 2.3.6
++%define libressl_version 2.4.4
  #
  %define nginx_home %{_localstatedir}/cache/nginx
  %define nginx_user nginx
