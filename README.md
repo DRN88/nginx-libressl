@@ -18,28 +18,20 @@ yum -y install openldap-devel openssl-devel perl-devel perl-ExtUtils-Embed GeoIP
 ```bash
 sudo -i
 cd /root
-
 rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.2-1.el7.ngx.src.rpm"
-
 git clone "https://github.com/DRN88/nginx-libressl.git"
-patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-libressl.patch
-
+patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.10.2/nginx-libressl.patch
 rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
 ```
 
-## Quick build on CentOS 7 - LibreSSL + TCPFastopen + LDAP Auth
+## ## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL + TCPFastopen
 * Get your nginx SRPM from here: http://nginx.org/packages/centos/7/SRPMS/  
 ```bash
 sudo -i
 cd /root
-
-rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.1-1.el7.ngx.src.rpm"
-
+rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.2-1.el7.ngx.src.rpm"
 git clone "https://github.com/DRN88/nginx-libressl.git"
-git clone "https://github.com/kvspb/nginx-auth-ldap.git"
-cp -ra nginx-auth-ldap rpmbuild/SOURCES/
-patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-libressl-tcpfastopen-ldap.patch
-
+patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.10.2/nginx-libressl-tcpfastopen.patch
 rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
 ```
 
