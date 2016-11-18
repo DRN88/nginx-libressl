@@ -6,20 +6,20 @@
 ## Install dependencies
 ```bash
 yum -y install openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-devel pcre-devel libxslt-devel gd-devel gcc-c++ make which wget autoconf libtool rpmdevtools git patch
-```
 
-## Install dependencies with LDAP Auth
-```bash
+# With ldap Auth dependencies
 yum -y install openldap-devel openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-devel pcre-devel libxslt-devel gd-devel gcc-c++ make which wget autoconf libtool rpmdevtools git patch
 ```
 
-## Quick build on CentOS 7
-* Get your nginx SRPM from here: http://nginx.org/packages/centos/7/SRPMS/  
+## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL only
+
+* Get nginx SRPM from here: http://nginx.org/packages/centos/7/SRPMS/  
+
 ```bash
 sudo -i
 cd /root
 
-rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.1-1.el7.ngx.src.rpm"
+rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.2-1.el7.ngx.src.rpm"
 
 git clone "https://github.com/DRN88/nginx-libressl.git"
 patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-libressl.patch
