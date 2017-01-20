@@ -13,7 +13,7 @@ yum -y install openldap-devel openssl-devel perl-devel perl-ExtUtils-Embed GeoIP
 
 ## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL only
 
-* Get nginx SRPM from here: http://nginx.org/packages/centos/7/SRPMS/  
+* Get nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/
 
 ```bash
 sudo -i
@@ -25,7 +25,7 @@ rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
 ```
 
 ## ## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL + TCPFastopen
-* Get your nginx SRPM from here: http://nginx.org/packages/centos/7/SRPMS/  
+* Get your nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/
 ```bash
 sudo -i
 cd /root
