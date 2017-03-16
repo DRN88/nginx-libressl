@@ -2,6 +2,7 @@
 * Minimal change to nginx.spec file
 * Edit patch/spec file to change LibreSSL version, etc
 * Added -DTCP_FASTOPEN=23 CC option with spec and patch
+* Unfortunately removed -fPIC Position-Independent Code FLAG so LibreSSL can compile. (there is probably a better fix)
 
 ## Install dependencies
 ```bash
@@ -11,27 +12,27 @@ yum -y install openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-dev
 yum -y install openldap-devel openssl-devel perl-devel perl-ExtUtils-Embed GeoIP-devel zlib-devel pcre-devel libxslt-devel gd-devel gcc-c++ make which wget autoconf libtool rpmdevtools git patch
 ```
 
-## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL only
-
-* Get nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/
-
+## Quick build nginx 1.11.10 on CentOS 7 - LibreSSL 
+**Caution -fPIC Position-Independent Code flag removed**  
+* Get nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/  
 ```bash
 sudo -i
 cd /root
-rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.2-1.el7.ngx.src.rpm"
+rpm -i "wget http://nginx.org/packages/mainline/centos/7/SRPMS/nginx-1.11.10-1.el7.ngx.src.rpm"
 git clone "https://github.com/DRN88/nginx-libressl.git"
-patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.10.2/nginx-libressl.patch
+patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.11.10/nginx-1.11.10-libressl.patch
 rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
 ```
 
-## ## Quick build nginx 1.10.2 on CentOS 7 - LibreSSL + TCPFastopen
-* Get your nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/
+## ## Quick build nginx 1.11.10 on CentOS 7 - LibreSSL + TCPFastopen
+**Caution -fPIC Position-Independent Code flag removed**  
+* Get your nginx SRPM from here: http://nginx.org/packages/mainline/centos/7/SRPMS/  
 ```bash
 sudo -i
 cd /root
-rpm -i "http://nginx.org/packages/centos/7/SRPMS/nginx-1.10.2-1.el7.ngx.src.rpm"
+rpm -i "wget http://nginx.org/packages/mainline/centos/7/SRPMS/nginx-1.11.10-1.el7.ngx.src.rpm"
 git clone "https://github.com/DRN88/nginx-libressl.git"
-patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.10.2/nginx-libressl-tcpfastopen.patch
+patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.11.10/nginx-1.11.10-libressl-tcpfastopen.patch
 rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
 ```
 
