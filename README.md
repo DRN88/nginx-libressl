@@ -18,7 +18,7 @@ yum -y install openldap-devel openssl-devel perl-devel perl-ExtUtils-Embed GeoIP
 ```bash
 sudo -i
 cd /root
-rpm -i "wget http://nginx.org/packages/mainline/centos/7/SRPMS/nginx-1.11.13-1.el7.ngx.src.rpm"
+rpm -i "http://nginx.org/packages/mainline/centos/7/SRPMS/nginx-1.11.13-1.el7.ngx.src.rpm"
 git clone "https://github.com/DRN88/nginx-libressl.git"
 patch -p 3 rpmbuild/SPECS/nginx.spec < nginx-libressl/nginx-1.11.13/nginx-1.11.13-libressl-tcpfastopen.patch
 rpmbuild -bb /root/rpmbuild/SPECS/nginx.spec
