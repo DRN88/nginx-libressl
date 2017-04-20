@@ -1,4 +1,4 @@
 ## Details
 
-Latest LibreSSL 2.5.3 version
-TCPFASTOPEN Enabled
+Latest LibreSSL 2.5.3 version  
+TCPFASTOPEN Enabled  
